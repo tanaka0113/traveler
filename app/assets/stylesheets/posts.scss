@@ -1,24 +1,46 @@
+.posts-new {
+
   h1 {
     font-family: serif;
   }
-  
+
   .cover-new {
-  height: 100vh;
-  width: 100%;
-  display: table;
+    height: 100vh;
+    width: 100%;
+    display: table;
 
-  background-image: url("/assets/new-scaled.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+    background-image: url("new-scaled.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
-
-  
   .form-label {
     font-size: 20px;
   }
-  
+
   .form-group {
     width: 600px;
   }
+  .page a,
+.next a,
+.last a,
+.first a,
+.prev a {
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page a:hover,
+.next a:hover,
+.last a:hover,
+.first a:hover,
+.prev a:hover {
+  color: black;
+}
+
+.current {
+  font-weight: bold;
+}
+}
