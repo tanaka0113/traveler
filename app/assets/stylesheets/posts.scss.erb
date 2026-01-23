@@ -1,0 +1,99 @@
+/* =========================
+   新規投稿ページ（new）
+   ========================= */
+
+/* 背景 */
+.cover-new {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 40px;
+
+  background-image: url("/assets/new-scaled.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+}
+
+/* 新規投稿フォーム */
+.posts-new {
+  margin: 40px auto;
+  padding: 24px;
+  width: 600px;
+
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+
+  h1 {
+    font-family: serif;
+  }
+
+  label {
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .form-group {
+    width: 100%;
+  }
+}
+
+/* =========================
+   ページネーション
+   ========================= */
+
+.page a,
+.next a,
+.last a,
+.first a,
+.prev a {
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page a:hover,
+.next a:hover,
+.last a:hover,
+.first a:hover,
+.prev a:hover {
+  color: black;
+}
+
+.current {
+  font-weight: bold;
+}
+
+/* =========================
+   投稿一覧ページ（index）
+   ========================= */
+
+.cover-index {
+  height: 100%;
+  width: 100%;
+  background-image: asset-url("index.jpg");
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+/* =========================
+   投稿詳細ページ（show）
+   ========================= */
+
+.cover-show {
+  height: 100%;
+  width: 100%;
+  background-image: asset-url("show.jpg");
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+#text {
+  font-size: 18px;
+}
+
