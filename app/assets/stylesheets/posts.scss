@@ -5,15 +5,21 @@
   }
 
   .cover-new {
-    height: 100vh;
-    width: 100%;
-    display: table;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 40px;
 
-    background-image: url("new-scaled.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+  background-image: url("/assets/new-scaled.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+}
+
+
+
 
   .form-label {
     font-size: 20px;
@@ -39,6 +45,14 @@
 .prev a:hover {
   color: black;
 }
+.posts-new {
+  label {
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+}
+
+
 
 .current {
   font-weight: bold;

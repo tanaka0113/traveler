@@ -13,3 +13,28 @@ body {
 .profiler-results {
   display: none;
 }
+
+.cover-new {
+  min-height: 100vh;
+  padding: 80px 0 40px;   // ← ここを 160px → 40px に
+  background-image: asset-url("new-scaled.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-new h1 {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin-left: 40px;
+}
+.posts-new {
+  margin: 40px auto 0;        // ← これが正解
+  background: rgba(255,255,255,0.95);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
