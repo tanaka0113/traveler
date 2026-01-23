@@ -104,8 +104,42 @@
 .cover-edit {
   height: 100%;
   width: 100%;
-  background-image: asset-url("edit.jpg");
+  background-image: url(<%= asset_path('edit.jpg') %>);
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
   background-size: 100% 100%;
 }
+
+/* ===== コメントエリア ===== */
+
+.comments {
+  margin-top: 40px;
+}
+
+.comments-index {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.comments-index strong {
+  font-size: 14px;
+}
+
+.comments-index .d-flex {
+  margin-top: 6px;
+}
+
+.comment-delete {
+  margin-left: auto;
+}
+
+.comments textarea {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+

@@ -25,3 +25,33 @@
     </div>
   </div>
 </div>
+<div class="comments mt-5">
+  <p>コメント件数：<%= @comments.count %></p>
+
+  <% @comments.each do |comment| %>
+    <div class="comments-index mb-2">
+      <strong><%= comment.user.name %></strong>
+      <%= comment.created_at.strftime('%Y/%m/%d') %><br>
+
+      <div class="d-flex">
+        <%= comment.comment %>
+
+        <% if comment.user == current_user %>
+          <%= link_to "削除",
+                post_comment_path(@post, comment),
+                data: { turbo_method: :delete },
+                class: "btn btn-sm btn-danger ms-auto" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= paginate @comments %>
+
+  <hr>
+
+  <%= form_with(model: [@post, @comment], local: true) do |f| %>
+    <%= f.text_area :comment, rows: 3, placeholder: "コメントする" %><br>
+    <%= f.submit "送信する", class: "btn btn-success mt-2" %>
+  <% end %>
+</div>
