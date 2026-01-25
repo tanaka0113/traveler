@@ -30,6 +30,9 @@
     destroy_user_session_path,
     data: { turbo_method: :delete },
     class: "text-white nav-link" %>
+    <div>
+  <%= link_to "マイページ", user_path(current_user.id), class: "text-white nav-link" %>
+</div>
 
     </div>
   </header>

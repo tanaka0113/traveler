@@ -66,55 +66,57 @@
 .current {
   font-weight: bold;
 }
-
-/* =========================
-   投稿一覧ページ（index）
-   ========================= */
-
+/* 投稿一覧ページ（index） */
 .cover-index {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
-  background-image: asset-url("index.jpg");
+  background-image: asset-url("index-scaled.jpg");
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
 }
 
-/* =========================
-   投稿詳細ページ（show）
-   ========================= */
-
+/* 投稿詳細ページ（show） */
 .cover-show {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
-  background-image: asset-url("show.jpg");
+  background-image: asset-url("show-scaled.jpg");
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
+}
+/* 投稿詳細：投稿＋コメント 横並び */
+.post-and-comments {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-#text {
-  font-size: 18px;
+.post-detail {
+  width: 50%;
 }
-
-/* =========================
-   投稿編集ページ（edit）
-   ========================= */
-
-.cover-edit {
-  height: 100%;
-  width: 100%;
-  background-image: url(<%= asset_path('edit.jpg') %>);
-  background-color: rgba(255, 255, 255, 0.4);
-  background-blend-mode: lighten;
-  background-size: 100% 100%;
-}
-
-/* ===== コメントエリア ===== */
 
 .comments {
+  width: 50%;
   margin-top: 40px;
 }
+
+
+/* 投稿編集ページ（edit） */
+.cover-edit {
+  min-height: 100vh;
+  width: 100%;
+  background-image: asset-url("edit-scaled.jpg");
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* ===== コメントエリア ===== */
 
 .comments-index {
   background: #ffffff;
@@ -143,3 +145,6 @@
   padding: 8px;
 }
 
+.favorite_btn {
+  color: #000;
+}
