@@ -12,9 +12,17 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.cover-overlay {
+  min-height: 100vh;
+  width: 100%;
 
-  background-color: rgba(255, 255, 255, 0.4);
-  background-blend-mode: lighten;
+  background: rgba(255, 255, 255, 0.45);
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 40px;
 }
 
 /* 新規投稿フォーム */
@@ -25,9 +33,12 @@
 
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 
   h1 {
     font-family: serif;
+    color: #000;          /* ← これを追加 */
+    text-shadow: none;    /* ← 念のため影も消す */
   }
 
   label {
@@ -40,6 +51,7 @@
     width: 100%;
   }
 }
+
 
 /* =========================
    ページネーション
@@ -68,7 +80,7 @@
 }
 /* 投稿一覧ページ（index） */
 .cover-index {
-  min-height: 100vh;
+  min-height: 110vh; /* ← ここだけ変更 */
   width: 100%;
   background-image: asset-url("index-scaled.jpg");
   background-color: rgba(255, 255, 255, 0.4);
@@ -76,6 +88,7 @@
   background-size: cover;
   background-position: center;
 }
+
 
 /* 投稿詳細ページ（show） */
 .cover-show {

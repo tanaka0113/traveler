@@ -39,17 +39,30 @@
         <h2>感想</h2>
         <p id="text"><%= @post.text %></p>
 
-        <%= link_to '編集する', edit_post_path(@post), class: "btn btn-info mr-3" %>
-        <%= link_to '削除する', post_path(@post),
-              data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" },
-              class: "btn btn-danger" %><br>
+        <% if @post.user == current_user %>
+  <%= link_to '編集する', edit_post_path(@post), class: "btn btn-info mr-3" %>
+  <%= link_to '削除する', post_path(@post),
+        data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" },
+        class: "btn btn-danger" %><br>
+<% end %>
+
 
         <%= link_to '投稿一覧ページへ', posts_path, class: "btn btn-dark mt-3" %>
       </div>
 
       <!-- 右：コメント -->
-      <div class="comments">
-        <p>コメント件数：<%= @comments.count %></p>
+<div class="comments">
+
+  <% if @comment.errors.any? %>
+  <div class="card text-center text-white bg-danger mt-3 mb-3 p-2">
+    <%= @comment.errors.count %>件のエラーが発生しました
+    <%= @comment.errors.full_messages.join(' ') %>
+  </div>
+<% end %>
+
+
+  <p>コメント件数：<%= @comments.count %></p>
+
 
         <% @comments.each do |comment| %>
           <div class="comments-index mb-2">

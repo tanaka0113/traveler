@@ -6,13 +6,23 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.new(post_params)
-    post.save
-    redirect_to post_path(post)
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+
+    if @post.save
+      redirect_to post_path(@post.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def confirm
+    @posts = current_user.posts.draft.page(params[:page]).reverse_order
   end
 
   def index
-    @posts = Post.page(params[:page]).reverse_order
+    @posts = Post.published.page(params[:page]).reverse_order
+    @posts = @posts.where('location LIKE ?', "%#{params[:search]}%") if params[:search].present?
   end
 
   def show
@@ -26,9 +36,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post_path(post)
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -39,8 +52,7 @@ class PostsController < ApplicationController
 
   private
 
-  # ★ これが無いと今のエラーになる
   def post_params
-    params.require(:post).permit(:location, :text, :image)
+    params.require(:post).permit(:location, :text, :image, :status)
   end
 end
